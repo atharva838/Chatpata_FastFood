@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="order.css">
+</head>
+<body>
+  <main>
+    <header>
+      <h1 id="heading">Welcome to Chatpata FastFood</h1>
+      <section class="btn1">
+        <button id="btn"><a href="index.html">Home</a></button>
+        <button id="btn"><a href="menu.html">Menus</a></button>
+        <button id="btn"><a href="cart.html">Cart</a></button>
+        <button id="btn"><a href="order.html">Order</a></button>
+      </section>
+    </header>
+    </div>
+  </main>
+  <div id="order">
+     <form id="orderform" onsubmit="submitorder(event)">
+        <input type="text" class="formelements" name="name" id="username" placeholder="Enter Your Name" required>
+        <input type="tel" class="formelements"name="mobile" id="mobile" pattern="[0-9]{10}" placeholder="Enter Your Mobile Number" required >
+        <input type="text" class="formelements"name="orderd" id="orderd" placeholder="Enter Your Address" required>
+        <button type="submit"class="formelements" id="orderbtn">Place Your Order</button>
+    </form>
+    <div id="qrsection" style="display: none;">
+      <h2>Total Bill : <span id="billamount"></span></h2>
+      <img id="qrimage" src="" alt="QR Code">
+    </div>
+  </div>
+  <script src="order.js"></script>
+<script src="cart.js"></script>
+</body>
+</html>

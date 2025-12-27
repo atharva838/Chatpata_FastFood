@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #503232;
+    color: #e4e4e4;
+}
+ 
+/*  CODE FOR LANDSCAPE SCREEN  */
+
+header {
+    position: sticky;
+    width: 100%;
+    background-color: #7a4b4b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 13vh;
+}
+#heading {
+    width: 40%;
+    font-size: 2.1vmax;
+    padding: 2%;
+}
+.btn1{ 
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 5%;
+}
+.btn1 button {
+    padding: 2% 3%;
+    font-size: 1.6vmax;
+    background-color: #e4e4e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn1 button a {
+    text-decoration: none;
+    color: #503232;
+}
+.btn1 button:hover {
+    background-color: #c3c3c3;
+    color: black;
+    box-shadow: 5px 5px 5px rgb(96, 50, 50);
+    transition: box-shadow 0.2s ease-in-out;
+    border-radius: 10px;
+}
+
+#cartlist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    padding: 3% ;
+    margin: 5% 10%;
+    min-height: 70vh;
+    border: 2px solid #e4e4e4;
+    border-radius: 10px;
+    background-color: #7a4b4b;
+    border: 2px solid white;
+}
+#cartlist h2 {
+    font-size: 2vmax;
+}
+#cartlist p {
+    font-size: 1.2vmax;
+    color: #c3c3c3;
+}
+#cartlist button {
+    padding: 1% 3%;
+    font-size: 1.4vmax;
+}
+/* CODE FOR MOBILE  SCREEN  */
+
+@media only screen and (max-width: 600px) {
+    header {
+        height: 10vh;
+    }
+    #heading {
+        width: 50%;
+        font-size: 5vw;
+    }
+    .btn1 {
+        width: 50%;
+    }
+    .btn1 button {
+        padding: 2% 3%;
+        font-size: 4vw;
+    }
+}
+#cart1 {
+    margin: 3%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 3px solid wheat;
+}
+#maintotal {
+    font-size: 3vmax;
+    text-align: center;
+    font-family: cursive;
+    margin-top: 4%;
+}
+#order {
+    height: 50vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#order button {
+    font-size: 2vmax;
+    padding: 2% 5%;
+    border-radius: 5%;
+    border: none;
+    background-color: #e4e4e4;
+}
+#order button:hover{
+    box-shadow: 14px 14px 3px black;
+}
+
+form {
+    height: 70vh;
+    width: 90vw;
+    margin: 0% 0%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15%;
+    font-family: cursive;
+}
+form h2 {
+    font-size: 2.5vmax; 
+}
+form #username {
+    height: 7vh;
+    width: 40vw;
+    font-size: 2vmax;
+    padding: 1% 4%;
+}
+form #mobile {
+    height: 7vh;
+    width: 40vw;
+    font-size: 2vmax;
+    padding: 1% 4%;
+}
+form #orderd {
+    height: 7vh;
+    width: 40vw;
+    font-size: 2vmax;
+    padding: 1% 4%;
+}
+#order {
+    height: 90vh;
+    width: 90vw;
+}
+#orderbtn a{
+    text-decoration: none;
+    color: #503232;
+}
+#qrbtn{
+    margin-top: 5vh;
+}
+@media only screen and (max-width: 600px) {
+    header {
+        width: 100%;
+        height: 13vh;
+    }
+    #heading {
+        width: 25%;
+        font-size: 4vw;
+    }
+    .btn1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 75%;
+        padding: 2% 5%;
+        gap: 2%;
+    }
+    .btn1 button {
+        padding: 2% 3%;
+        font-size: 5vw;
+    }
+    .center {
+        width: 85%;
+        height: 75vh;
+    }
+}

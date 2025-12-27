@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #503232;
+    color: #e4e4e4;
+}
+ 
+/*  CODE FOR LANDSCAPE SCREEN  */
+
+header {
+    position: sticky;
+    width: 100%;
+    background-color: #7a4b4b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 13vh;
+}
+#heading {
+    width: 40%;
+    font-size: 2.1vmax;
+    padding: 2%;
+}
+.btn1{ 
+    width: 40%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 5%;
+}
+.btn1 button {
+    padding: 2% 3%;
+    font-size: 1.6vmax;
+    background-color: #e4e4e4;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn1 button a {
+    text-decoration: none;
+    color: #503232;
+}
+.btn1 button:hover {
+    background-color: #c3c3c3;
+    color: black;
+    box-shadow: 5px 5px 5px rgb(96, 50, 50);
+    transition: box-shadow 0.2s ease-in-out;
+    border-radius: 10px;
+}
+.c1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.center {
+    margin-top: 1%;
+    height: 70vh;
+    width: 60%;
+    padding: 2%;
+    background-color: #7a4b4b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10%;;
+}
+.center:hover {
+    box-shadow: 15px 15px 10px rgb(0, 0, 0);
+    transition: box-shadow  1.4s  ease-in-out ;
+}
+.center p{
+    font-size: 1.5vmax;
+    font-family: cursive;
+}
+@keyframes anime1 {
+    from {
+        color: rgb(187, 167, 167);
+    }
+    to {
+        color: rgb(64, 45, 45);
+    }
+}
+.center h1 {
+    font-size: 3vmax;
+    animation: anime1 4s infinite alternate;
+    text-transform: capitalize;
+    font-family: Arial, Helvetica, sans-serif;
+}
+footer {
+    position: sticky;
+    height: 10vh;
+    width: 100%;
+    background-color: #7a4b4b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vmax;
+    margin-top: 4vh;
+} 
+
+/* CODE FOR MOBILE  SCREEN  */
+
+@media only screen and (max-width: 600px) {
+    header {
+        width: 100%;
+        height: 13vh;
+    }
+    #heading {
+        width: 25%;
+        font-size: 4vw;
+    }
+    .btn1 {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        width: 75%;
+        padding: 2% 5%;
+        gap: 2%;
+    }
+    .btn1 button {
+        padding: 2% 3%;
+        font-size: 5vw;
+    }
+    .center {
+        width: 85%;
+        height: 75vh;
+    }
+    .center h1 {
+        font-size: 7vw;
+    }
+    .center p {
+        font-size: 2vmax;
+    }
+    footer {
+        margin-top: 7vh;
+        height: 7vh;
+        position: relative;
+        font-size: 3vw;
+    }
+}
