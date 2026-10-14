@@ -1,33 +1,203 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home Page - Chatpata FastFood</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fffaf5">
+  <meta name="description" content="Discover delicious, freshly prepared fast food at Chatpata FastFood. Explore our menu and order your favourites.">
+  <title>Chatpata FastFood | Fresh, Flavourful Food</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      align-items: center;
+      gap: 48px;
+      padding-block: 76px;
+    }
+
+    .hero h1 {
+      margin-top: 14px;
+      font: 800 clamp(2.6rem, 5.5vw, 4.6rem)/1.1 'Poppins', sans-serif;
+      letter-spacing: -2px;
+    }
+
+    .hero h1 span { color: var(--primary); }
+
+    .hero-copy {
+      max-width: 530px;
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 380px;
+      display: grid;
+      place-items: center;
+      border-radius: 35px;
+      background: linear-gradient(135deg, #ffe2c6, #ffb978);
+      overflow: hidden;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+    }
+
+    .hero-tag {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      padding: 12px 17px;
+      background: white;
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      font-weight: 700;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .feature {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+    }
+
+    .feature-icon { font-size: 1.8rem; }
+
+    .feature h3 {
+      margin-top: 12px;
+      font: 700 1.05rem 'Poppins', sans-serif;
+    }
+
+    .feature p {
+      margin-top: 8px;
+      color: var(--muted);
+      font-size: .94rem;
+    }
+
+    .home-cta {
+      padding: 34px;
+      border-radius: 24px;
+      background: #fff0e5;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; padding-block: 44px; gap: 30px; }
+      .hero-visual, .hero-visual img { min-height: 280px; height: 300px; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .home-cta { align-items: flex-start; flex-direction: column; padding: 24px; }
+    }
+  </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Chatpata FastFood home">
+        <span class="brand-mark">🍴</span>
+        Chatpata <span>FastFood</span>
+      </a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart <span data-cart-count>0</span></a>
+        <a href="order.html">Order</a>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <header>
-      <h1 id="heading">Welcome to Chatpata FastFood</h1>
-      <section class="btn1">
-        <button id="btn"><a href="index.html">Home</a></button>
-        <button id="btn"><a href="menu.html">Menus</a></button>
-        <button id="btn"><a href="cart.html">Cart</a></button>
-        <button id="btn"><a href="order.html">Order</a></button>
-      </section>
-    </header>
-    <section class="c1">
-      <section class="center">
-       <h1>What is best FastFood where taste meet quality</h1>
-       <p>Welcome to Chatpata Fast Food, where taste meets quality! We serve a wide variety of delicious, fresh, and hygienically prepared fast food that satisfies every craving. From crispy snacks to mouth-watering meals, our focus is on bold flavors, quick service, and affordable prices. Whether you’re stopping by for a quick bite or ordering for friends and family, Chatpata Fast Food promises great taste, fast delivery, and complete customer satisfaction—because every bite should be chatpata and memorable.</p>
+    <section class="container hero">
+      <div>
+        <p class="eyebrow">Fresh bites, happy vibes</p>
+        <h1>Big flavours.<br>Little <span>moments.</span></h1>
+        <p class="hero-copy">
+          From crispy snacks to flavour-packed Indian favourites,
+          discover food made to brighten your day. Fresh, satisfying
+          and full of chatpata goodness.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="menu.html">Explore the menu →</a>
+          <a class="button button-secondary" href="cart.html">View cart</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img
+          src="images/biryani.jpg"
+          alt="A delicious serving of biryani"
+          fetchpriority="high"
+          onerror="this.style.display='none'">
+        <div class="hero-tag">❤️ Made for food lovers</div>
+      </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+        <p class="eyebrow">Why choose us?</p>
+        <h2 class="section-title">Good food. Good mood.</h2>
+        <p class="section-description">
+          A simple, flavourful experience from choosing your meal
+          to reviewing your order.
+        </p>
+        <div class="feature-grid">
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🌶️</span>
+            <h3>Bold flavours</h3>
+            <p>Enjoy a tempting selection of snacks, meals and favourites.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🥗</span>
+            <h3>Freshly prepared</h3>
+            <p>We put flavour and care at the heart of every dish.</p>
+          </article>
+          <article class="feature">
+            <span class="feature-icon" aria-hidden="true">🛍️</span>
+            <h3>Easy ordering</h3>
+            <p>Browse the menu, manage your cart and review your order.</p>
+          </article>
+        </div>
+      </div>
     </section>
-    <footer>
-      <h3>© 2024 Chatpata FastFood. All rights reserved.</h3> 
-    </footer>
+
+    <section class="container section">
+      <div class="home-cta">
+        <div>
+          <p class="eyebrow">Ready to eat?</p>
+          <h2 class="section-title">Your next favourite is waiting.</h2>
+          <p class="section-description">Explore the menu and pick your favourites.</p>
+        </div>
+        <a class="button" href="menu.html">Browse menu →</a>
+      </div>
+    </section>
   </main>
-  <script src="script.js"></script>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>🍴 Chatpata FastFood</strong>
+      <p>© <span data-year>2026</span> Chatpata FastFood. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>
-
