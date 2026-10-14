@@ -1,38 +1,96 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Order Page -  Chatpata FastFood</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Review your Chatpata FastFood order and enter your delivery details.">
+  <title>Place Your Order | Chatpata FastFood</title>
   <link rel="stylesheet" href="order.css">
+  <script src="script.js" defer></script>
+  <script src="order.js" defer></script>
 </head>
 <body>
-  <main>
-    <header>
-      <h1 id="heading">Welcome to Chatpata FastFood</h1>
-      <section class="btn1">
-        <button id="btn"><a href="index.html">Home</a></button>
-        <button id="btn"><a href="menu.html">Menus</a></button>
-        <button id="btn"><a href="cart.html">Cart</a></button>
-        <button id="btn"><a href="order.html">Order</a></button>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">🍴</span>Chatpata <span>FastFood</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html">Cart <span data-cart-count>0</span></a>
+        <a href="order.html" aria-current="page">Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-heading">
+      <p class="eyebrow">One last step</p>
+      <h1>Complete your order</h1>
+      <p>Enter your details and review the order total before continuing.</p>
+    </section>
+
+    <div class="checkout-layout">
+      <section class="checkout-card">
+        <h2>Delivery details</h2>
+        <form id="orderform">
+          <div class="form-field">
+            <label for="username">Full name</label>
+            <input type="text" name="name" id="username"
+              placeholder="Enter your full name" autocomplete="name"
+              minlength="2" maxlength="80" required>
+          </div>
+
+          <div class="form-field">
+            <label for="mobile">Mobile number</label>
+            <input type="tel" name="mobile" id="mobile"
+              placeholder="10-digit mobile number" inputmode="numeric"
+              autocomplete="tel" pattern="[6-9][0-9]{9}"
+              title="Enter a valid 10-digit Indian mobile number" required>
+          </div>
+
+          <div class="form-field">
+            <label for="orderd">Delivery address</label>
+            <textarea name="address" id="orderd"
+              placeholder="House number, street, area and city"
+              autocomplete="street-address" minlength="8"
+              maxlength="300" required></textarea>
+          </div>
+
+          <button class="button place-order-button" id="orderbtn" type="submit">
+            Confirm order details →
+          </button>
+          <p class="muted form-note">
+            This demo stores order details in your browser. It does not send
+            orders to a restaurant server.
+          </p>
+        </form>
       </section>
-    </header>
+
+      <aside class="checkout-card order-summary">
+        <h2>Bill summary</h2>
+        <p class="summary-line"><span>Items subtotal</span><strong id="order-subtotal">₹0</strong></p>
+        <p class="summary-line"><span>Delivery</span><strong id="order-delivery">₹0</strong></p>
+        <p class="summary-line summary-total"><span>Total payable</span><strong id="billamount">₹0</strong></p>
+        <p id="checkout-message" class="notice" role="status" hidden></p>
+
+        <section id="qrsection" hidden>
+          <h3>UPI payment</h3>
+          <p id="payment-instructions" class="muted"></p>
+          <img id="qrimage" src="" alt="UPI payment QR code" hidden>
+          <p class="muted payment-warning">
+            Verify the recipient and amount in your UPI app before paying.
+          </p>
+        </section>
+      </aside>
     </div>
   </main>
-  <div id="order">
-     <form id="orderform" onsubmit="submitorder(event)">
-        <input type="text" class="formelements" name="name" id="username" placeholder="Enter Your Name" required>
-        <input type="tel" class="formelements"name="mobile" id="mobile" pattern="[0-9]{10}" placeholder="Enter Your Mobile Number" required >
-        <input type="text" class="formelements"name="orderd" id="orderd" placeholder="Enter Your Address" required>
-        <button type="submit"class="formelements" id="orderbtn">Place Your Order</button>
-    </form>
-    <div id="qrsection" style="display: none;">
-      <h2>Total Bill : <span id="billamount"></span></h2>
-      <img id="qrimage" src="" alt="QR Code">
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>🍴 Chatpata FastFood</strong>
+      <p>© <span data-year>2026</span> Chatpata FastFood.</p>
     </div>
-  </div>
-  <script src="order.js"></script>
-<script src="cart.js"></script>
+  </footer>
 </body>
 </html>
-
