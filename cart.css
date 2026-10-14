@@ -1,199 +1,170 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body {
-    font-family: Arial, sans-serif;
-    background-color: #503232;
-    color: #e4e4e4;
-}
- 
-/*  CODE FOR LANDSCAPE SCREEN  */
+@import url("style.css");
 
-header {
-    position: sticky;
-    width: 100%;
-    background-color: #7a4b4b;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 13vh;
-}
-#heading {
-    width: 40%;
-    font-size: 2.1vmax;
-    padding: 2%;
-}
-.btn1{ 
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0% 5%;
-}
-.btn1 button {
-    padding: 2% 3%;
-    font-size: 1.6vmax;
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.btn1 button a {
-    text-decoration: none;
-    color: #503232;
-}
-.btn1 button:hover {
-    background-color: #c3c3c3;
-    color: black;
-    box-shadow: 5px 5px 5px rgb(96, 50, 50);
-    transition: box-shadow 0.2s ease-in-out;
-    border-radius: 10px;
+.cart-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(270px, .8fr);
+  align-items: start;
+  gap: 28px;
+  padding-bottom: 64px;
 }
 
-#cartlist {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding: 3% ;
-    margin: 5% 10%;
-    min-height: 70vh;
-    border: 2px solid #e4e4e4;
-    border-radius: 10px;
-    background-color: #7a4b4b;
-    border: 2px solid white;
-}
-#cartlist h2 {
-    font-size: 2vmax;
-}
-#cartlist p {
-    font-size: 1.2vmax;
-    color: #c3c3c3;
-}
-#cartlist button {
-    padding: 1% 3%;
-    font-size: 1.4vmax;
-}
-/* CODE FOR MOBILE  SCREEN  */
-
-@media only screen and (max-width: 600px) {
-    header {
-        height: 10vh;
-    }
-    #heading {
-        width: 50%;
-        font-size: 5vw;
-    }
-    .btn1 {
-        width: 50%;
-    }
-    .btn1 button {
-        padding: 2% 3%;
-        font-size: 4vw;
-    }
-}
-#cart1 {
-    margin: 3%;
-    width: 30%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
-    border: 3px solid wheat;
-}
-#maintotal {
-    font-size: 3vmax;
-    text-align: center;
-    font-family: cursive;
-    margin-top: 4%;
-}
-#order {
-    height: 50vh;
-    width: 90vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-#order button {
-    font-size: 2vmax;
-    padding: 2% 5%;
-    border-radius: 5%;
-    border: none;
-    background-color: #e4e4e4;
-}
-#order button:hover{
-    box-shadow: 14px 14px 3px black;
+.cart-items {
+  display: grid;
+  gap: 16px;
 }
 
-form {
-    height: 70vh;
-    width: 90vw;
-    margin: 0% 0%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 15%;
-    font-family: cursive;
+.cart-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
 }
-form h2 {
-    font-size: 2.5vmax; 
+
+.cart-item h2 {
+  font: 700 1.05rem 'Poppins', sans-serif;
 }
-form #username {
-    height: 7vh;
-    width: 40vw;
-    font-size: 2vmax;
-    padding: 1% 4%;
+
+.cart-item-price {
+  margin-top: 5px;
+  color: var(--primary);
+  font-weight: 800;
 }
-form #mobile {
-    height: 7vh;
-    width: 40vw;
-    font-size: 2vmax;
-    padding: 1% 4%;
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
 }
-form #orderd {
-    height: 7vh;
-    width: 40vw;
-    font-size: 2vmax;
-    padding: 1% 4%;
+
+.quantity-button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: #fffaf5;
+  font-weight: 800;
 }
-#order {
-    height: 90vh;
-    width: 90vw;
+
+.quantity-button:hover {
+  background: #fff0e8;
 }
-#orderbtn a{
-    text-decoration: none;
-    color: #503232;
+
+.quantity-value {
+  min-width: 24px;
+  text-align: center;
+  font-weight: 800;
 }
-#qrbtn{
-    margin-top: 5vh;
+
+.remove-button {
+  padding: 8px 11px;
+  border: 0;
+  border-radius: 9px;
+  background: #fff0ee;
+  color: #b52d21;
+  font-weight: 700;
 }
-@media only screen and (max-width: 600px) {
-    header {
-        width: 100%;
-        height: 13vh;
-    }
-    #heading {
-        width: 25%;
-        font-size: 4vw;
-    }
-    .btn1 {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 75%;
-        padding: 2% 5%;
-        gap: 2%;
-    }
-    .btn1 button {
-        padding: 2% 3%;
-        font-size: 5vw;
-    }
-    .center {
-        width: 85%;
-        height: 75vh;
-    }
+
+.remove-button:hover {
+  background: #ffded8;
+}
+
+.cart-summary {
+  position: sticky;
+  top: 110px;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: var(--shadow);
+}
+
+.cart-summary h2 {
+  margin-bottom: 20px;
+  font: 700 1.2rem 'Poppins', sans-serif;
+}
+
+.summary-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  margin-block: 14px;
+  color: var(--muted);
+}
+
+.summary-line strong {
+  color: var(--ink);
+}
+
+.summary-total {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+  font-size: 1.12rem;
+  color: var(--ink);
+}
+
+.summary-total strong {
+  color: var(--primary);
+  font-size: 1.3rem;
+}
+
+.summary-note {
+  margin-block: 15px;
+  font-size: .85rem;
+}
+
+.checkout-button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.back-link {
+  display: block;
+  margin-top: 16px;
+  text-align: center;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.empty-cart {
+  padding: 42px 24px;
+  text-align: center;
+  border: 1px dashed #dfcfc0;
+  border-radius: var(--radius);
+  background: white;
+}
+
+.empty-cart .empty-icon {
+  font-size: 2.5rem;
+}
+
+.empty-cart h2 {
+  margin-block: 12px;
+  font: 700 1.3rem 'Poppins', sans-serif;
+}
+
+.empty-cart p {
+  margin-bottom: 22px;
+  color: var(--muted);
+}
+
+@media (max-width: 760px) {
+  .cart-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  .cart-item {
+    padding: 17px;
+  }
 }
