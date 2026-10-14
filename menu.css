@@ -1,122 +1,135 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url("style.css");
+
+.menu-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin: 12px 0 28px;
 }
-body {
-    min-height: 100%;
-    min-width: 100%;
-    font-family: Arial, sans-serif;
-    background-color: #503232;
-    color: #e4e4e4;
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: min(100%, 420px);
+  padding: 0 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: white;
 }
-header {
-    position: sticky;
-    width: 100%;
-    background-color: #7a4b4b;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 13vh;
+
+.search-box input {
+  width: 100%;
+  min-width: 0;
+  height: 48px;
+  border: 0;
+  outline: 0;
+  background: transparent;
 }
-#heading {
-    width: 40%;
-    font-size: 2.1vmax;
-    padding: 2%;
-}
-.btn1{ 
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0% 5%;
-}
-.btn1 button {
-    padding: 2% 3%;
-    font-size: 1.6vmax;
-    background-color: #e4e4e4;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-.btn1 button a {
-    text-decoration: none;
-    color: #503232;
-}
-.btn1 button:hover {
-    background-color: #c3c3c3;
-    color: black;
-    box-shadow: 5px 5px 5px rgb(96, 50, 50);
-    transition: box-shadow 0.2s ease-in-out;
-    border-radius: 10px;
-}
+
 .menus {
-    padding: 3%;
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
+  padding-bottom: 64px;
 }
-#card-container {
-    width: 40%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    margin: 1%; 
-    height: 50vh;
-    background-color: #7a4b4b;
-    border-radius: 10%;
-    border: 5px solid white;
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
 }
-#card-container img {
-    height: 70%;
-    border-radius: 20%;
+
+.food-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: white;
+  box-shadow: 0 4px 18px rgba(58, 36, 20, .035);
+  transition: transform .22s, box-shadow .22s;
 }
-#card-container h2 , span , button {
-    color: #c3c3c3;
-    font-family: cursive;
+
+.food-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow);
 }
-#card-container button {
-    cursor: pointer;
-    padding: 1% 2%;
-    font-size: 1.2vmax;
-    color: #503232;
-    border-radius: 10%;
+
+.food-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #f3e9df;
 }
-@media screen and (max-width: 400px) {
-    #card-container {
-        width: 90%;
-    }
-    .menus {
-        flex-direction: column;
-        gap: 5%;
-    }
+
+.food-image-fallback {
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: .9rem;
 }
-@media only screen and (max-width: 600px) {
-    header {
-        width: 100%;
-        height: 13vh;
-    }
-    #heading {
-        width: 25%;
-        font-size: 4vw;
-    }
-    .btn1 {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        width: 75%;
-        padding: 2% 5%;
-        gap: 2%;
-    }
-    .btn1 button {
-        padding: 2% 3%;
-        font-size: 5vw;
-    }
-    .center {
-        width: 85%;
-        height: 75vh;
-    }
+
+.food-content {
+  padding: 20px;
+}
+
+.food-content h2 {
+  font: 700 1.12rem 'Poppins', sans-serif;
+}
+
+.food-content p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.food-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.food-price {
+  color: var(--primary);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.add-button {
+  padding: 10px 13px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  font-weight: 700;
+}
+
+.add-button:hover {
+  background: var(--primary-dark);
+}
+
+.add-button:disabled {
+  opacity: .7;
+  cursor: wait;
+}
+
+.empty-menu {
+  grid-column: 1 / -1;
+  padding: 42px 20px;
+  text-align: center;
+  border-radius: var(--radius);
+  background: white;
+  border: 1px solid var(--border);
+}
+
+@media (max-width: 900px) {
+  .card-container { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .card-container { grid-template-columns: 1fr; }
+  .food-image { height: 230px; }
+  .food-content { padding: 16px; }
+  .menu-toolbar { align-items: flex-start; flex-direction: column; }
 }
