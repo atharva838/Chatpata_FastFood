@@ -1,28 +1,54 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Menu Page -   Chatpata FastFood</title>
-  <!-- <link rel="stylesheet" href="style.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Browse the Chatpata FastFood menu and add your favourite dishes to your cart.">
+  <title>Our Menu | Chatpata FastFood</title>
   <link rel="stylesheet" href="menu.css">
+  <script src="script.js" defer></script>
+  <script src="menu.js" defer></script>
 </head>
 <body>
-  <main>
-    <header>
-      <h1 id="heading">Welcome to Chatpata FastFood</h1>
-      <section class="btn1">
-        <button id="btn"><a href="index.html">Home</a></button>
-        <button id="btn"><a href="menu.html">Menus</a></button>
-        <button id="btn"><a href="cart.html">Cart</a></button>
-        <button id="btn"><a href="order.html">Order</a></button>
-      </section>
-    </header>
-    <section class="menus">
-        <section class="card-container"></section>
-    </section> 
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">🍴</span>Chatpata <span>FastFood</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html" aria-current="page">Menu</a>
+        <a href="cart.html">Cart <span data-cart-count>0</span></a>
+        <a href="order.html">Order</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="page-heading">
+      <p class="eyebrow">Something delicious</p>
+      <h1>Explore our menu</h1>
+      <p>Find your favourites, add them to your cart and enjoy.</p>
+    </section>
+
+    <div class="menu-toolbar">
+      <label class="search-box">
+        <span aria-hidden="true">🔎</span>
+        <input id="menu-search" type="search" placeholder="Search dishes..." aria-label="Search menu items">
+      </label>
+      <p id="menu-count" class="muted" aria-live="polite"></p>
+    </div>
+
+    <p id="menu-message" class="notice" role="status" hidden></p>
+    <section class="menus" aria-label="Food menu">
+      <div class="card-container" id="menu-grid"></div>
+    </section>
   </main>
-  <script src="menu.js"></script>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>🍴 Chatpata FastFood</strong>
+      <p>© <span data-year>2026</span> Chatpata FastFood.</p>
+    </div>
+  </footer>
 </body>
 </html>
-
