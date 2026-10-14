@@ -1,29 +1,65 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cart Page -  Chatpata FastFood</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your Cart | Chatpata FastFood</title>
   <link rel="stylesheet" href="cart.css">
+  <script src="script.js" defer></script>
+  <script src="cart.js" defer></script>
 </head>
 <body>
-  <main>
-    <header>
-      <h1 id="heading">Welcome to Chatpata FastFood</h1>
-      <section class="btn1">
-        <button id="btn"><a href="index.html">Home</a></button>
-        <button id="btn"><a href="menu.html">Menus</a></button>
-        <button id="btn"><a href="cart.html">Cart</a></button>
-        <button id="btn"><a href="order.html">Order</a></button>
-      </section>
-    </header>
-    <div id="cartlist">
-        <div class="cart1">
-        
-        </div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark">🍴</span>Chatpata <span>FastFood</span></a>
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="cart.html" aria-current="page">Cart <span data-cart-count>0</span></a>
+        <a href="order.html">Order</a>
+      </nav>
     </div>
+  </header>
+
+  <main class="container">
+    <section class="page-heading">
+      <p class="eyebrow">Almost there</p>
+      <h1>Your shopping cart</h1>
+      <p>Review your dishes and update quantities before checkout.</p>
+    </section>
+
+    <p id="cart-message" class="notice" role="status" hidden></p>
+
+    <section class="cart-layout">
+      <div id="cartlist" class="cart-items" aria-live="polite"></div>
+
+      <aside id="cart-summary" class="cart-summary">
+        <h2>Order summary</h2>
+        <div class="summary-line">
+          <span>Items subtotal</span>
+          <strong id="subtotal">₹0</strong>
+        </div>
+        <div class="summary-line">
+          <span>Delivery</span>
+          <strong id="delivery">₹0</strong>
+        </div>
+        <div class="summary-line summary-total">
+          <span>Total</span>
+          <strong id="maintotal">₹0</strong>
+        </div>
+        <p class="muted summary-note">Final charges should be confirmed before placing your order.</p>
+        <a class="button checkout-button" href="order.html">Continue to order →</a>
+        <a class="back-link" href="menu.html">← Continue shopping</a>
+      </aside>
+    </section>
   </main>
-  <script src="cart.js"></script>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <strong>🍴 Chatpata FastFood</strong>
+      <p>© <span data-year>2026</span> Chatpata FastFood.</p>
+    </div>
+  </footer>
 </body>
 </html>
-
